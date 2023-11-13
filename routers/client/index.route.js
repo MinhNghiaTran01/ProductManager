@@ -1,4 +1,5 @@
 const productRouter = require('./products.route.js')
+const homeController = require("../../controllers/client/home.controller.js")
 module.exports = (app) =>{
   // app.get('/', async (req, res) => {
   //   const products = await Products.find({});
@@ -7,9 +8,7 @@ module.exports = (app) =>{
   //      products: products
   //    });
   // });
-  app.get('/',  (req, res) => {
-      console.log("hello world!");
-  });
+  app.get('/',  homeController.index);
 
   app.use('/products',productRouter)
-}
+} 
